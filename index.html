@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>frontend</title>
+
+    
+<link rel="stylesheet" href="./index.css">
+
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js">
+    </script>
+
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js">
+    </script> 
+
+
+
+    <script>
+        $(function () {
+            $("#ListId").sortable({
+                update: function (event, ui) {
+                    getIdsOfImages();
+                }       
+            });
+        });
+
+        function getIdsOfImages() {
+            var values = [];
+            $('.list').each(function (index) {
+                values.push($(this).attr("id")
+                    .replace("imageNo", ""));
+            });
+            $('#outputvalues').val(values);
+        }
+    </script>
+
+</head>
+
+
+<body>
+    <div class="height"></div><br>
+    <div id="ListId">
+        <div id="imageNo1" class="list">
+            <img src="https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg" alt="">
+        </div>
+
+        <div id="imageNo2" class="list">
+            <img src="https://thumbs.dreamstime.com/b/bee-flower-27533578.jpg" alt="">
+        </div>
+
+        <div id="imageNo3" class="list">
+            <img src="https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg" alt="">
+        </div>
+
+        <div id="imageNo4" class="list">
+            <img src="https://thumbs.dreamstime.com/z/panorama-beautiful-green-forest-summer-nature-scenery-yellow-wild-flowers-panorama-beautiful-green-forest-landscape-131579660.jpg" alt="">
+        </div>
+
+    </div>
+</body>
+</html>
